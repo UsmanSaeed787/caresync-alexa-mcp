@@ -74,7 +74,7 @@ export const ApprovalPanel: React.FC<ApprovalPanelProps> = ({
       </div>
 
       {/* List of Pending Proposals */}
-      <div className="space-y-4">
+      <div className="space-y-4 max-h-[440px] overflow-y-auto pr-1">
         {pendingProposals.map((proposal) => {
           const isBusy = actingId === proposal.id || loading;
 

@@ -154,6 +154,8 @@ export const PatientContextPanel: React.FC<PatientContextPanelProps> = ({
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
             {dischargePlan.source_excerpts.map((item, idx) => {
               const isOpen = expandedExcerpt === idx;
+              const title = item.category || item.label || `Excerpt #${idx + 1}`;
+              const content = item.text || item.excerpt || "";
               return (
                 <div
                   key={idx}
@@ -163,14 +165,14 @@ export const PatientContextPanel: React.FC<PatientContextPanelProps> = ({
                   <div className="flex items-center justify-between font-semibold text-slate-800 mb-1">
                     <span className="flex items-center space-x-1">
                       <CheckCircle2 className="w-3.5 h-3.5 text-indigo-500" />
-                      <span>{item.label}</span>
+                      <span>{title}</span>
                     </span>
                     <span className="text-[10px] text-indigo-600 font-medium">
                       {isOpen ? "Collapse" : "Read"}
                     </span>
                   </div>
                   <p className={`text-slate-600 italic text-[11px] ${isOpen ? "" : "line-clamp-2"}`}>
-                    "{item.excerpt}"
+                    "{content}"
                   </p>
                 </div>
               );

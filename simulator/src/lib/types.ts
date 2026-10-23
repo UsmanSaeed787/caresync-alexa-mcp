@@ -22,8 +22,10 @@ export interface Patient {
 }
 
 export interface SourceExcerpt {
-  label: string;
-  excerpt: string;
+  category?: string;
+  label?: string;
+  text?: string;
+  excerpt?: string;
 }
 
 export interface DischargePlan {
