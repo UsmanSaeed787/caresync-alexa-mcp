@@ -1,0 +1,22 @@
+# FastAPI & ASGI Web Server
+fastapi==0.161.1
+starlette==1.9.0
+uvicorn[standard]==0.34.0
+sse-starlette==3.5.0
+
+# Data Validation & Settings
+pydantic==2.14.1
+pydantic-settings==2.7.1
+
+# SQLite Async Engine
+aiosqlite==0.20.0
+
+# Model Context Protocol (MCP) SDK - Streamable HTTP Support (Protocol 2026-07-28)
+mcp==2.3.0
+mcp-types==2.3.0
+httpx2==2.16.0
+
+# Testing & HTTP Client
+pytest==8.3.4
+pytest-asyncio==0.25.0
+httpx==0.28.1

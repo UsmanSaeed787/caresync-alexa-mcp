@@ -1,0 +1,43 @@
+# Python & Virtual Environments
+.venv/
+.venv*/
+venv/
+ENV/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.pytest_cache/
+.coverage
+htmlcov/
+
+# Local databases
+*.db
+*.sqlite3
+*.sqlite
+server/caresync_local.db
+
+# Secrets & Environment variables
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Node / Simulator (Phase 3)
+node_modules/
+.next/
+out/
+build/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE & OS
+.idea/
+.vscode/
+*.swp
+*.swo
+Thumbs.db
+Desktop.ini
+.DS_Store

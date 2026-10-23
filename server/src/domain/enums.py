@@ -1,0 +1,24 @@
+"""CareSync domain enumerations."""
+
+from enum import Enum
+
+
+class TaskStatus(str, Enum):
+    PENDING = "PENDING"
+    COMPLETED = "COMPLETED"
+    CANCELLED = "CANCELLED"
+
+
+class ProposalStatus(str, Enum):
+    PENDING = "PENDING"
+    APPROVED = "APPROVED"
+    REJECTED = "REJECTED"
+
+
+class AuditAction(str, Enum):
+    PROPOSAL_CREATED = "PROPOSAL_CREATED"
+    PROPOSAL_APPROVED = "PROPOSAL_APPROVED"
+    PROPOSAL_REJECTED = "PROPOSAL_REJECTED"
+    TASK_CREATED = "TASK_CREATED"
+    TASK_UPDATED = "TASK_UPDATED"
+    TASK_STATUS_CHANGED = "TASK_STATUS_CHANGED"

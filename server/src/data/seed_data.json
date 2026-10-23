@@ -1,0 +1,73 @@
+{
+  "scenario": "CareSync Synthetic Hospital Discharge Demo",
+  "disclaimer": "SYNTHETIC DEMO DATA ONLY. All individuals, clinical scenarios, and hospital encounters are entirely fictional. Not for clinical decision-making, diagnosis, or treatment.",
+  "patient": {
+    "id": "patient-synthetic-001",
+    "mrn": "SYNTH-MRN-84920",
+    "full_name": "Eleanor Vance [SYNTHETIC]",
+    "date_of_birth": "1952-08-14",
+    "is_synthetic": true
+  },
+  "discharge_plan": {
+    "id": "plan-synthetic-001",
+    "patient_id": "patient-synthetic-001",
+    "admission_date": "2026-10-14",
+    "discharge_date": "2026-10-20",
+    "summary": "Synthetic post-discharge coordination plan for 74yo female following hospitalization for acute decompensated heart failure, stabilized with diuresis prior to discharge.",
+    "source_text": "DISCHARGE SUMMARY (SYNTHETIC RECORD)\nPATIENT: Eleanor Vance [SYNTHETIC]\nDOB: 1952-08-14 | MRN: SYNTH-MRN-84920\nADMIT DATE: 2026-10-14 | DISCHARGE DATE: 2026-10-20\n\nHOSPITAL COURSE:\nPatient admitted for acute exacerbation of heart failure. Responded well to intravenous furosemide. Transitioned to oral regimen. Clinically euvolemic and stable for discharge.\n\nDISCHARGE FOLLOW-UP INSTRUCTIONS:\n1. Primary Care: Schedule follow-up appointment with primary care physician Dr. Sarah Jenkins within 7 days of discharge (by 2026-10-27).\n2. Cardiology: Follow up with outpatient cardiology clinic. Patient requires echocardiogram in 4 weeks.\n3. Laboratory: Order basic metabolic panel (BMP) in 10-14 days to monitor renal function after furosemide adjustment.\n4. Medication Reconciliation: Medication reconciliation reviewed with patient and daughter at bedside prior to discharge.",
+    "source_excerpts": [
+      {
+        "category": "PCP Follow-Up",
+        "text": "Schedule follow-up appointment with primary care physician Dr. Sarah Jenkins within 7 days of discharge (by 2026-10-27)."
+      },
+      {
+        "category": "Cardiology Follow-Up",
+        "text": "Follow up with outpatient cardiology clinic. Patient requires echocardiogram in 4 weeks."
+      },
+      {
+        "category": "Laboratory Work",
+        "text": "Order basic metabolic panel (BMP) in 10-14 days to monitor renal function after furosemide adjustment."
+      },
+      {
+        "category": "Medication Reconciliation",
+        "text": "Medication reconciliation reviewed with patient and daughter at bedside prior to discharge."
+      }
+    ],
+    "explicit_missing_fields": [
+      "cardiology_follow_up_date",
+      "lab_coordinator_owner"
+    ]
+  },
+  "tasks": [
+    {
+      "id": "task-synth-001",
+      "patient_id": "patient-synthetic-001",
+      "title": "Medication reconciliation reviewed with patient prior to discharge",
+      "status": "COMPLETED",
+      "due_date": "2026-10-20",
+      "owner": "Nurse Case Manager Rivera",
+      "source_reference": "Medication reconciliation reviewed with patient and daughter at bedside prior to discharge.",
+      "requires_human_confirmation": false
+    },
+    {
+      "id": "task-synth-002",
+      "patient_id": "patient-synthetic-001",
+      "title": "Schedule primary care physician appointment with Dr. Sarah Jenkins",
+      "status": "PENDING",
+      "due_date": "2026-10-27",
+      "owner": "Care Coordinator Alex",
+      "source_reference": "Schedule follow-up appointment with primary care physician Dr. Sarah Jenkins within 7 days of discharge (by 2026-10-27).",
+      "requires_human_confirmation": false
+    },
+    {
+      "id": "task-synth-003",
+      "patient_id": "patient-synthetic-001",
+      "title": "Schedule outpatient cardiology appointment and 4-week echocardiogram",
+      "status": "PENDING",
+      "due_date": null,
+      "owner": null,
+      "source_reference": "Follow up with outpatient cardiology clinic. Patient requires echocardiogram in 4 weeks.",
+      "requires_human_confirmation": true
+    }
+  ]
+}
