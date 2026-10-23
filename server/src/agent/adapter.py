@@ -60,7 +60,7 @@ class DeterministicAgentAdapter(AgentAdapter):
                 response_text=(
                     "CRITICAL SAFETY NOTICE: This prototype cannot assess medical emergencies, provide clinical triage, "
                     "or recommend medications. If this fictional scenario were a real medical situation, please direct "
-                    "the patient immediately to local emergency services (911) or a qualified healthcare provider."
+                    "the patient immediately to local emergency services or a qualified healthcare professional as appropriate."
                 ),
                 tool_calls=[],
                 safety_refusal=True,

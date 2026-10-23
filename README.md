@@ -1,7 +1,7 @@
 # CareSync — Alexa+ Care Coordination Agent
 
 > **Amazon Developer Hackathon — Primary Track:** Amazon Alexa+  
-> **Status:** Hackathon MVP (Production-Hardened Prototype)  
+> **Status:** Hackathon MVP (Tested Prototype)  
 > **Repository Single Source of Truth:** [`AGENTS.md`](./AGENTS.md)  
 > **Protocol:** Real Model Context Protocol (MCP) Server over **Streamable HTTP** (MCP Specification `2026-07-28` / `2025-11-25+`)
 
@@ -15,7 +15,7 @@ CareSync is an administrative care coordination simulation built for the Amazon 
 - **Non-Goals:** CareSync **MUST NOT** diagnose, triage symptoms, recommend treatments, calculate clinical risk, prescribe/discontinue medications, or contact real patients, emergency services, or external healthcare systems.
 - **Synthetic Data Boundary:** All patient records (`Eleanor Vance [SYNTHETIC]`), identifiers (`SYNTH-MRN-84920`), and clinical scenarios are entirely fictional and bundled locally.
 - **Honest Simulation Disclaimer:** The web workspace is an **Alexa+-style simulation** communicating over live Streamable HTTP MCP tools. It is not connected to physical Alexa+ hardware or private production EHR accounts.
-- **Emergency Invariant:** If an emergency or symptom inquiry is presented, CareSync strictly refuses clinical triage and instructs immediate contact with local emergency services (911).
+- **Emergency Invariant:** If an emergency or symptom inquiry is presented, CareSync strictly refuses clinical triage and directs the user to local emergency services or a qualified healthcare professional as appropriate.
 
 ---
 
@@ -170,7 +170,7 @@ Follow this exact golden path walkthrough for the video presentation:
 | **1:10 - 1:50** | **Conversation Panel & MCP Tool Calling** | *Click the quick prompt: 'What follow-ups are still outstanding?'.*<br>*"Our Alexa+ voice assistant invokes the live MCP tools `get_discharge_plan` and `list_follow_up_tasks`. We can click to inspect the real-time MCP arguments and server payloads returned over Streamable HTTP."* | Verifies real MCP tool calling over Streamable HTTP—zero fake frontend data. |
 | **1:50 - 2:25** | **Approval Gating & Task Persistence** | *Click: 'Prepare a follow-up task for the primary-care appointment'.*<br>*"The agent calls `propose_follow_up_task`, citing the verbatim discharge text. Notice our human approval gate: the proposal is staged in the Approval Panel under 'Pending Human Approval'. It is NOT on the active board yet. When the coordinator clicks 'Approve & Schedule Task', the proposal is confirmed, the task appears on the board, and a simulated reminder is activated."* | Demonstrates explicit human-in-the-loop approval gating and source evidence. |
 | **2:25 - 2:45** | **Immutable Audit Trail** | *Scroll to Audit Trail.*<br>*"Every action is recorded in an immutable, append-only audit trail showing the actor, timestamp, and entity payload. Re-approving or duplicate requests are safely deduplicated."* | Proves audit integrity and idempotency. |
-| **2:45 - 3:00** | **Safety Emergency Test** | *Click: 'Emergency Safety Test' ('Crushing chest pain...').*<br>*"Finally, when presented with a medical emergency, CareSync strictly refuses clinical triage and displays immediate emergency guidance to contact 911."* | Proves clinical safety guardrails. |
+| **2:45 - 3:00** | **Safety Emergency Test** | *Click: 'Emergency Safety Test' ('Crushing chest pain...').*<br>*"Finally, when presented with a medical emergency, CareSync strictly refuses clinical triage and displays immediate emergency guidance directing the user to local emergency services or a qualified healthcare professional."* | Proves clinical safety guardrails. |
 
 ---
 
