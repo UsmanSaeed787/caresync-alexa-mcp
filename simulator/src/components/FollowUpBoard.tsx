@@ -88,7 +88,7 @@ export const FollowUpBoard: React.FC<FollowUpBoardProps> = ({ tasks, loading }) 
           <p>No follow-up tasks found for filter: {filter.toLowerCase()}.</p>
         </div>
       ) : (
-        <div className="space-y-3">
+        <div className="space-y-3 max-h-[440px] overflow-y-auto pr-1">
           {filteredTasks.map((task) => {
             const isPending = task.status === "PENDING";
             const isCompleted = task.status === "COMPLETED";
