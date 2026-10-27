@@ -5,6 +5,8 @@
 > **Repository Single Source of Truth:** [`AGENTS.md`](./AGENTS.md)  
 > **Protocol:** Real Model Context Protocol (MCP) Server over **Streamable HTTP** (MCP Specification `2026-07-28` / `2025-11-25+`)
 
+[![M8ven Score](https://m8ven.ai/badge/mcp/usmansaeed787-caresync-alexa-mcp-020ync?v=623e4e79a6c16e81ea4a478300a9f4fa)](https://m8ven.ai/mcp/usmansaeed787-caresync-alexa-mcp-020ync?s=readme)
+
 ---
 
 ## ⚠️ Prototype Safety & Synthetic Data Notice
